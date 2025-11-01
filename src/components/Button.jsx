@@ -1,9 +1,11 @@
-const Button = () => {
+const Button = ({ text, backgroung, border, textColor, hoverText }) => {
   return (
     <div>
-      <button className="px-[26px] py-1.5 bg-[#0053AD] hover:bg-[#007afc] rounded-full text-white font-bold">
-        Entrar
-      </button>
+      <div
+        className={`px-[26px] py-1.5 ${backgroung} ${border} ${textColor} ${hoverText} hover:bg-[#007afc] rounded-full  font-bold cursor-pointer`}
+      >
+        {text}
+      </div>
     </div>
   );
 };

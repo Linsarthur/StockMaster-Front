@@ -12,7 +12,7 @@ const NavBar = () => {
           <p>Funcionalidades</p>
           <p>Quem somos</p>
         </div>
-        <Button />
+        <Button text="Entrar" backgroung="bg-[#0053AD]" textColor="text-white"/>
       </header>
     </>
   );
