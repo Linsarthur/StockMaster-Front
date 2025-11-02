@@ -44,6 +44,7 @@ const Home = () => {
         />
       </div>
       <BlueCard />
+      {console.lgo("teste")}
     </>
   );
 };
