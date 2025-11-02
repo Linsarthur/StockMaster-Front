@@ -17,8 +17,7 @@ const NavBar = () => {
         </div>
         <Button
           text={!logged ? "Entrar" : "Logado"}
-          backgroung="bg-[#0053AD]"
-          textColor="text-white"
+          style="bg-[#0053AD] text-white"
         />
       </header>
     </>

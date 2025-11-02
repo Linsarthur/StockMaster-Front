@@ -1,5 +1,6 @@
 import Accordion from "../components/Accordion";
 import Banner from "../components/Banner";
+import BlueCard from "../components/BlueCard";
 import CardsHome from "../components/CardsHome";
 import NavBar from "../components/NavBar";
 import VideoPresentation from "../components/VideoPresentation";
@@ -42,6 +43,7 @@ const Home = () => {
           icon={<box-icon name="report" type="solid" size="lg"></box-icon>}
         />
       </div>
+      <BlueCard />
     </>
   );
 };
