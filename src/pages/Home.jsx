@@ -1,3 +1,4 @@
+import Accordion from "../components/Accordion";
 import Banner from "../components/Banner";
 import NavBar from "../components/NavBar";
 import VideoPresentation from "../components/VideoPresentation";
@@ -8,7 +9,7 @@ const Home = () => {
       <NavBar />
       <Banner />
       <VideoPresentation />
-      
+      <Accordion />
     </>
   );
 };
