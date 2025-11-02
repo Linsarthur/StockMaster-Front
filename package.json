@@ -12,6 +12,8 @@
   "dependencies": {
     "@material-tailwind/html": "^3.0.0-beta.7",
     "@tailwindcss/vite": "^4.1.16",
+    "bootstrap-icons": "^1.13.1",
+    "boxicons": "^2.1.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-player": "^3.3.3"
