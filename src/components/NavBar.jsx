@@ -1,7 +1,10 @@
+import { useState } from "react";
 import logo from "../assets/logoStock.svg";
 import Button from "./Button";
 
 const NavBar = () => {
+  const [logged, setLogged] = useState(false);
+
   return (
     <>
       <header className="flex justify-between px-20 py-3 items-center drop-shadow-lg/25 w-full bg-white ">
@@ -12,7 +15,11 @@ const NavBar = () => {
           <p>Funcionalidades</p>
           <p>Quem somos</p>
         </div>
-        <Button text="Entrar" backgroung="bg-[#0053AD]" textColor="text-white"/>
+        <Button
+          text={!logged ? "Entrar" : "Logado"}
+          backgroung="bg-[#0053AD]"
+          textColor="text-white"
+        />
       </header>
     </>
   );
