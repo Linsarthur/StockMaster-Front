@@ -1,7 +1,7 @@
 import Accordion from "../components/Accordion";
 import Banner from "../components/Banner";
-import BlueCard from "../components/BlueCard";
 import CardsHome from "../components/CardsHome";
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import VideoPresentation from "../components/VideoPresentation";
 
@@ -21,7 +21,7 @@ const Home = () => {
           <span className="text-[#0053AD]">alcançar seus objetivos.</span>
         </h2>
       </div>
-      <div className="flex justify-between p-20">
+      <div className="flex justify-between p-20 mb-80">
         <CardsHome
           title="Fácil de usar"
           text="Gerencie seu negócio com facilidade. Nossa plataforma simplifica tudo para você."
@@ -43,8 +43,7 @@ const Home = () => {
           icon={<box-icon name="report" type="solid" size="lg"></box-icon>}
         />
       </div>
-      <BlueCard />
-      
+      <Footer />
     </>
   );
 };
