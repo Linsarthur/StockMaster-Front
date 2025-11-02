@@ -30,15 +30,11 @@ const Banner = () => {
           <div className="flex gap-5">
             <Button
               text="Comece agora"
-              backgroung="bg-[#0053AD]"
-              textColor="text-white"
+              style="bg-[#0053AD] text-white"
             />
             <Button
               text="Saiba mais"
-              backgroung="bg-transparent"
-              border="border-2"
-              textColor="text-[#0053AD]"
-              hoverText="hover:bg-[#0053AD] hover:text-white"
+              style="bg-transparent border-2 text-[#0053AD] hover:bg-[#0053AD] hover:text-white"       
             />
           </div>
         </div>
