@@ -13,7 +13,7 @@ const Forms = ({ data1, data2, data3 }) => {
             type="text"
             name="email"
             id="email"
-            className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-8 w-[350px] text-[18px] outline-[#999999]"
+            className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-auto w-[90%] text-[18px] outline-[#999999]"
             placeholder="Insira seu e-mail"
           />
           <label
@@ -26,7 +26,7 @@ const Forms = ({ data1, data2, data3 }) => {
             type="text"
             name="email"
             id="email"
-            className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-8 w-[350px] text-[18px] outline-[#999999]  "
+            className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-auto w-[90%] text-[18px] outline-[#999999]  "
             placeholder="Insira seu e-mail"
           />
           {data3 ? (
@@ -41,7 +41,7 @@ const Forms = ({ data1, data2, data3 }) => {
                 type="text"
                 name="email"
                 id="email"
-                className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-8 w-[75%] mb-7 text-[18px] outline-[#999999]  "
+                className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-auto w-[90%] mb-7 text-[18px] outline-[#999999]  "
                 placeholder="Insira seu e-mail"
               />
             </>
