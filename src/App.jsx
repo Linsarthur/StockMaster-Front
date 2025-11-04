@@ -1,13 +1,12 @@
-import './App.css'
-import Home from './pages/Home'
+import "./App.css";
+import Paths from "./routes/Paths";
 
 function App() {
-  
   return (
     <>
-      <Home/>
+      <Paths />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
