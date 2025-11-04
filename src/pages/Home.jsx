@@ -1,3 +1,4 @@
+import logo from "../assets/logoStock.svg";
 import Accordion from "../components/Accordion";
 import Banner from "../components/Banner";
 import CardsHome from "../components/CardsHome";
@@ -8,7 +9,7 @@ import VideoPresentation from "../components/VideoPresentation";
 const Home = () => {
   return (
     <>
-      <NavBar />
+      <NavBar logo={logo}/>
       <Banner />
       <VideoPresentation />
       <Accordion />

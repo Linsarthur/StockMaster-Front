@@ -1,8 +1,10 @@
-const Button = ({ text,style }) => {
+const Button = ({ text, style }) => {
   return (
     <div>
       <div
-        className={`px-[26px] py-1.5 ${style} hover:bg-[#007afc] rounded-full  font-bold cursor-pointer`}
+        className={`
+          py-1 px-2 text-[10px] hidden
+          xl:px-[26px] xl:py-1.5 ${style} hover:bg-[#007afc] rounded-full xl:text-[16px] xl:font-bold cursor-pointer xl:block`}
       >
         {text}
       </div>
