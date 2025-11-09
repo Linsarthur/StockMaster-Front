@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 const RegisterPage = () => {
   return (
     <>
-      <div className="xl:flex xl:flex-col xl:items-center xl:h-full xl:w-full bg-[#DBEDFF]">
+      <div className="xl:flex xl:flex-col xl:items-center xl:h-screen xl:w-screen bg-[#DBEDFF]">
         <NavBar />
         <div
           className="flex justify-center items-center flex-col
