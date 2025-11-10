@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router";
 import logoCompact from "../assets/logoStockCompact.png";
 import Button from "./Button";
 
@@ -23,10 +24,10 @@ const NavBar = () => {
           <p>Funcionalidades</p>
           <p>Quem somos</p>
         </div>
-        <Button
-          text={!logged ? "Entrar" : "Logado"}
-          style="bg-[#0053AD] text-white"
-        />
+
+        <NavLink to="/entrar">
+          <Button text="Entrar" style="bg-[#0053AD] text-white" />
+        </NavLink>
       </header>
     </>
   );

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import logoStock from "../assets/logoStock.svg";
 import Button from "../components/Button";
 import Forms from "../components/Forms";
@@ -25,11 +26,11 @@ const Login = () => {
             />
 
             <div className="text-center mt-5 text-[#0053AD] font-semibold text-[18px] leadind-[100%] pb-5">
-              <a href="">
+              <NavLink to="/cadastro">
                 Ainda não tem cadastro?
                 <br />
                 Escreva-se agora
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

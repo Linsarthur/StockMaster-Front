@@ -5,7 +5,11 @@ import NavBar from "../components/NavBar";
 const RegisterPage = () => {
   return (
     <>
-      <div className="xl:flex xl:flex-col xl:items-center xl:h-screen xl:w-screen bg-[#DBEDFF]">
+      <div className="xl:flex xl:flex-col lg:h-screen lg:w-screen xl:items-center 
+      
+      
+      xl:h-screen xl:w-screen
+      2xl:h-full 2xl:w-full bg-[#DBEDFF]">
         <NavBar />
         <div
           className="flex justify-center items-center flex-col
@@ -41,7 +45,7 @@ const RegisterPage = () => {
           <p> | </p>
           <a href="">Termos de uso</a>
         </div>
-        <div className="text-center pt-4 text-[#66768C]">
+        <div className="text-center pt-4 text-[#66768C] 2xl:pb-10">
           <p>
             © 2024-2025 <span className="text-[#0053AD]">StockMaster.</span>{" "}
             <br />
