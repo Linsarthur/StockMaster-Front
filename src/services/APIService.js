@@ -8,9 +8,9 @@ export async function getFunction() {
 }
 
 export async function login(email, password) {
-    const response = await axios.post(`${api}/users/login`, { user_email: email, user_password: password })
+    const response = await axios.post(`${api}/users/login`,{ user_email: email, user_password: password })
         .then((response) => {
-            console.log(response.data);
+            console.log (response.data);
         })
     return response.data
         .catch((error) => {
