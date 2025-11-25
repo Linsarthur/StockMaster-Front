@@ -3,7 +3,7 @@ import logoStock from "../assets/logoStock.svg";
 import Button from "../components/Button";
 import Forms from "../components/Forms";
 import { useState } from "react";
-import { login } from "../services/APIService.js";
+import { login } from "../services/apiService.js";
 
 const Login = () => {
   const [email, setEmail] = useState("");
