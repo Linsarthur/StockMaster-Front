@@ -12,7 +12,7 @@ const Paths = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/entrar" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<RegisterPage />} />
           <Route path="/politicas" element={<PolicyPage />} />
           <Route path="/termos-de-uso" element={<TermsOfUse />} />

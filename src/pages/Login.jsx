@@ -1,26 +1,37 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import logoStock from "../assets/logoStock.svg";
 import Button from "../components/Button";
-import Forms from "../components/Forms";
-import { useState } from "react";
+
+import {  useContext, useRef,  } from "react";
 import { login } from "../services/apiService.js";
+import { LoginContext } from "../context/loginContext.jsx";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const { setLogado } = useContext(LoginContext);
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      const response = await login(email, password);
-      const user = response.data;
-      return user;
-    } catch (error) {
-      setError("Credencias inválidas");
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  async function onLogin(event) {
+    event.preventDefault();
+    let dados = {
+      user_email: emailRef.current.value,
+      user_password: passwordRef.current.value,
+    };
+    const request = await login(dados)
+
+    if (request.token) {
+      console.log(request.token)
+      sessionStorage.setItem("token", request.token);
+      sessionStorage.setItem("usuario", JSON.stringify(request.usuario));
+      setLogado(true);
+      navigate("/");
+      return;
     }
-  };
+
+    alert(request.message);
+  }
 
   return (
     <>
@@ -29,12 +40,12 @@ const Login = () => {
         <div>
           <div className="bg-white  rounded-2xl drop-shadow-lg/25 border border-[#ABBED1]">
             <p className="my-[50px] text-center font-bold text-2xl leading-[100%] mx-20">
-              Acesse sua conta teste
+              Acesse sua conta
             </p>
             <div>
               <form
                 className="flex flex-col justify-center gap-4 mb-4"
-                onSubmit={handleLogin}
+                onSubmit={onLogin}
               >
                 <label
                   htmlFor="email"
@@ -43,15 +54,12 @@ const Login = () => {
                   Email
                 </label>
                 <input
+                  ref={emailRef}
                   type="text"
                   name="email"
                   id="email"
                   className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-auto w-[90%] text-[18px] outline-[#999999]"
                   placeholder="Insira seu e-mail"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
                 />
                 <label
                   htmlFor="password"
@@ -60,16 +68,18 @@ const Login = () => {
                   Senha
                 </label>
                 <input
-                  type="number"
+                  type="password"
                   name="password"
                   id="password"
                   className="bg-white border rounded-xl border-[#999999] px-5 py-1 mx-auto w-[90%] text-[18px] outline-[#999999]  "
                   placeholder="Insira sua password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
+                  ref={passwordRef}
                 />
+                <div>
+                  <a href="" className="mx-8 text-[#0053AD]  font-semibold">
+                    Esqueci minha senha
+                  </a>
+                </div>
 
                 <button type="submit">
                   <Button
@@ -78,12 +88,6 @@ const Login = () => {
                   />
                 </button>
               </form>
-            </div>
-
-            <div className="mb-6">
-              <a href="" className="mx-8 text-[#0053AD]  font-semibold">
-                Esqueci minha senha
-              </a>
             </div>
 
             <div className="text-center mt-5 text-[#0053AD] font-semibold text-[18px] leadind-[100%] pb-5">
