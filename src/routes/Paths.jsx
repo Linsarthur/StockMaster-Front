@@ -5,6 +5,7 @@ import NotFound from "../pages/NotFound";
 import PolicyPage from "../pages/PolicyPage";
 import RegisterPage from "../pages/RegisterPage";
 import TermsOfUse from "../pages/TermsOfUse";
+import DashBoard from "../pages/DashBoard";
 
 const Paths = () => {
   return (
@@ -13,6 +14,7 @@ const Paths = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/cadastro" element={<RegisterPage />} />
           <Route path="/politicas" element={<PolicyPage />} />
           <Route path="/termos-de-uso" element={<TermsOfUse />} />
