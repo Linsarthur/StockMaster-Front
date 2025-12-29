@@ -22,9 +22,9 @@ const Login = () => {
     const request = await login(dados)
 
     if (request.token) {
-      console.log(request.token)
+      console.log(request)
       sessionStorage.setItem("token", request.token);
-      sessionStorage.setItem("usuario", JSON.stringify(request.usuario));
+      sessionStorage.setItem("user", JSON.stringify(request.user));
       setLogado(true);
       navigate("/");
       return;

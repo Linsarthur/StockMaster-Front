@@ -41,7 +41,7 @@ const Home = () => {
         <CardsHome
           title="Decisões melhores"
           text=" Relatórios que impulsionam seu negócio. Com uma visão clara e completa das suas operações, você toma decisões mais assertivas e estratégicas."
-          icon={<box-icon name="report" type="solid" size="lg"></box-icon>}
+          icon={<box-icon type='solid' name='report' size="lg"></box-icon>}
         />
       </div>
       <Footer />

@@ -8,14 +8,14 @@ export const LoginProvider = ({ children }) => {
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
+    setUsuario(JSON.parse(sessionStorage.getItem("user")));
     if (token) {
       setLogado(true);
-      
     }
   }, [logado]);
   return (
     <>
-      <LoginContext.Provider value={{ logado, setLogado }}>
+      <LoginContext.Provider value={{ logado, setLogado, usuario }}>
         {children}
       </LoginContext.Provider>
     </>

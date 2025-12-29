@@ -6,7 +6,6 @@ const VideoPresentation = () => {
       <div className="flex justify-between px-50 py-10 gap-20 items-center w-full">
         <iframe
           src={storageVideo}
-          frameborder="0"
           width="400"
           height="400"
           title="Storage presentation"
