@@ -26,7 +26,7 @@ const Login = () => {
       sessionStorage.setItem("token", request.token);
       sessionStorage.setItem("user", JSON.stringify(request.user));
       setLogado(true);
-      navigate("/");
+      navigate("/dashboard");
       return;
     }
 
