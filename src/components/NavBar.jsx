@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import logoCompact from "../assets/logoStockCompact.png";
 import Button from "./Button";
 import { useContext } from "react";
@@ -7,9 +7,12 @@ import { LoginContext } from "../context/loginContext.jsx";
 const NavBar = () => {
   const { logado } = useContext(LoginContext);
   const { usuario } = useContext(LoginContext);
+  const navigate = useNavigate();
   const logout = () => {
     sessionStorage.clear();
+    navigate("/");
     window.location.reload();
+    
   };
 
   return (
@@ -25,14 +28,13 @@ const NavBar = () => {
           <div className="flex gap-3">
             <box-icon name="user" color="#1a2371" type="solid"></box-icon>
             <p>{usuario?.user_name}</p>
-            <NavLink to="/">
-              <box-icon
-                name="exit"
-                type="solid"
-                color="#1a2371"
-                onclick={logout}
-              ></box-icon>
-            </NavLink>
+
+            <box-icon
+              name="exit"
+              type="solid"
+              color="#1a2371"
+              onclick={logout}
+            ></box-icon>
           </div>
         </header>
       ) : (
