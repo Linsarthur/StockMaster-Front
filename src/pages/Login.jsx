@@ -22,7 +22,6 @@ const Login = () => {
     const request = await login(dados)
 
     if (request.token) {
-      console.log(request)
       sessionStorage.setItem("token", request.token);
       sessionStorage.setItem("user", JSON.stringify(request.user));
       setLogado(true);
