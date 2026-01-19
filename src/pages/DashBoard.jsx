@@ -1,10 +1,12 @@
 import NavBar from "../components/NavBar";
 import avatarBatman from "../assets/avatar-batman.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../context/loginContext";
 import RegisterProduct from "../components/RegisterProduct";
+import UnloadProduct from "../components/UnloadProduct";
 const DashBoard = () => {
   const { usuario } = useContext(LoginContext);
+  const [secaoAtiva, setSecaoAtiva] = useState("Entrada");
   return (
     <>
       <NavBar />
@@ -40,10 +42,12 @@ const DashBoard = () => {
             <h3 className="font-bold text-2xl leading-10">Cadastro</h3>
           </div>
           <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
-          <nav className="px-8 pt-10 *:block *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
-            <p>Usuários</p>
-            <p>Produtos</p>
-            <p>Categoria</p>
+          <nav className="px-8 pt-10 *:block *:cursor-pointer *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
+            <button onClick={() => setSecaoAtiva("users")}>Usuários</button>
+            <button onClick={() => setSecaoAtiva("products")}>Produtos</button>
+            <button onClick={() => setSecaoAtiva("categories")}>
+              Categoria
+            </button>
             <p>Lote</p>
           </nav>
           {/* Relatorios */}
@@ -59,7 +63,9 @@ const DashBoard = () => {
             </div>
             <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
             <nav className="px-8 pt-5 *:block *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
-              <p>Gerar Relatórios</p>
+              <button onClick={() => setSecaoAtiva("reports")}>
+                Gerar Relatórios
+              </button>
             </nav>
           </div>
 
@@ -69,14 +75,15 @@ const DashBoard = () => {
               <h3 className="font-bold text-2xl leading-10">Estoque</h3>
             </div>
             <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
-            <nav className="px-8 pt-5 *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
-              <p>Entrada</p>
-              <p>Saída</p>
+            <nav className="px-8 pt-5 *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD] *:block *:cursor-pointer">
+              <button onClick={() => setSecaoAtiva("enter")}>Entrada</button>
+              <button onClick={() => setSecaoAtiva("exit")}>Saída</button>
             </nav>
           </div>
         </aside>
 
-        <RegisterProduct />
+        {secaoAtiva === "enter" && <RegisterProduct />}
+        {secaoAtiva === "exit" && <UnloadProduct />}
       </main>
     </>
   );
