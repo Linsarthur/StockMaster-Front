@@ -7,7 +7,7 @@ export async function getFunction() {
     return response.data
 }
 
-export async function login({user_email, user_password}) {
+export async function login({ user_email, user_password }) {
     try {
         const response = await axios.post(
             `${api}/users/login`,
@@ -20,7 +20,17 @@ export async function login({user_email, user_password}) {
     }
 }
 
-
-export async function registerProductToStock({product_name,}){
-
+export async function registerProductToStock({ product_name, batch_idfk, product_amount }) {
+    try {
+        
+        const response = await axios.post(`${api}/products/create`, {product_name, batch_idfk, product_amount})
+        
+        console.log(response)
+        return response
+        
+    } catch (error) {
+        throw error.response?.data || "Erro ao cadastrar produto";
+    }
 }
+
+
