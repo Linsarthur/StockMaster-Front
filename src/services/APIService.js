@@ -19,3 +19,8 @@ export async function login({user_email, user_password}) {
         throw error.response?.data || "Erro ao fazer login";
     }
 }
+
+
+export async function registerProductToStock({product_name,}){
+
+}
