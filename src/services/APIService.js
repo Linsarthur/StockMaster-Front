@@ -22,15 +22,25 @@ export async function login({ user_email, user_password }) {
 
 export async function registerProductToStock({ product_name, batch_idfk, product_amount }) {
     try {
-        
-        const response = await axios.post(`${api}/products/create`, {product_name, batch_idfk, product_amount})
-        
+
+        const response = await axios.post(`${api}/products/create`, { product_name, batch_idfk, product_amount })
+
         console.log(response)
         return response
-        
+
     } catch (error) {
         throw error.response?.data || "Erro ao cadastrar produto";
     }
 }
 
 
+export async function deleteOneProduct({ product_id }) {
+    try {
+        const response = await axios.delete(`${api}/products/delete/:id`)
+        console.log(response);
+        return response
+    } catch (error) {
+        throw error.response?.data || "Erro ao deletar produto";
+    }
+
+}

@@ -42,13 +42,13 @@ const DashBoard = () => {
             <h3 className="font-bold text-2xl leading-10">Cadastro</h3>
           </div>
           <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
-          <nav className="px-8 pt-10 *:block *:cursor-pointer *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
+          <nav className="px-8 pt-10 flex flex-col items-start gap-4 *:cursor-pointer  font-light text-[20px] leading-[100%] text-[#0053AD]">
             <button onClick={() => setSecaoAtiva("users")}>Usuários</button>
             <button onClick={() => setSecaoAtiva("products")}>Produtos</button>
             <button onClick={() => setSecaoAtiva("categories")}>
               Categoria
             </button>
-            <p>Lote</p>
+            <button onClick={() => setSecaoAtiva("batch")}>Lote</button>
           </nav>
           {/* Relatorios */}
           <div>
@@ -62,7 +62,7 @@ const DashBoard = () => {
               <h3 className="font-bold text-2xl leading-10">Relatórios</h3>
             </div>
             <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
-            <nav className="px-8 pt-5 *:block *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
+            <nav className="px-8 pt-5 *:block *:cursor-pointer *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD]">
               <button onClick={() => setSecaoAtiva("reports")}>
                 Gerar Relatórios
               </button>
@@ -75,7 +75,7 @@ const DashBoard = () => {
               <h3 className="font-bold text-2xl leading-10">Estoque</h3>
             </div>
             <div className="border-b border-[#AECFFD] shadow-[0_1px_1px_0_rgba(0,0,0,0.45)] mx-8"></div>
-            <nav className="px-8 pt-5 *:pb-[18px] font-light text-[20px] leading-[100%] text-[#0053AD] *:block *:cursor-pointer">
+            <nav className="px-8 pt-5 flex flex-col items-start gap-3 font-light text-[20px] leading-[100%] text-[#0053AD] *:block *:cursor-pointer">
               <button onClick={() => setSecaoAtiva("enter")}>Entrada</button>
               <button onClick={() => setSecaoAtiva("exit")}>Saída</button>
             </nav>
